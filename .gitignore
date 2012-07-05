@@ -1,0 +1,33 @@
+# Bootstrap
+app/bootstrap*
+
+# Symfony directories
+vendor/*
+*/logs/*
+*/cache/*
+web/uploads/*
+web/bundles/*
+
+# Configuration files
+app/config/parameters.ini
+app/config/parameters.yml
+composer.phar
+web/bundles
+
+#
+# Using the assetic stuff, it spits files
+# out into the css and js directories and
+# we don't want to track those files.
+#
+web/css/*
+web/js/*
+
+#
+# This is for we run builds for testing the
+# code and such
+#
+build/api/
+build/code-browser/
+build/coverage/
+build/logs/
+build/pdepend/

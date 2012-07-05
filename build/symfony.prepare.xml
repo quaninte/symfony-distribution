@@ -1,0 +1,58 @@
+<project>
+  <target name="symfony.prepare">
+    <touch file="${basedir}/app/config/parameters.yml" />
+    <mkdir dir="${basedir}/app/cache" />
+    <mkdir dir="${basedir}/web/uploads" />
+<echo file="${basedir}/app/config/parameters.yml">
+parameters:
+    database_driver: pdo_mysql
+    database_host: ${db.host}
+    database_name: ${db.name}
+    database_user: ${db.user}
+    database_password: ${db.pass}
+    database_port: 3306
+    mailer_transport: smtp
+    mailer_host: localhost
+    mailer_user: null
+    mailer_password: null
+    locale: en
+    secret: symfony2
+</echo>
+    <exec executable="bash">
+      <arg value="-c" />
+      <arg value="curl -s http://getcomposer.org/installer | php" />
+    </exec>
+    <exec executable="php">
+      <arg value="composer.phar" />
+      <arg value="update" />
+    </exec>
+    <exec executable="app/console">
+      <arg value="doctrine:database:drop" />
+      <arg value="-n" />
+      <arg value="--force" />
+    </exec>
+    <exec executable="app/console">
+      <arg value="doctrine:database:create" />
+      <arg value="-n" />
+    </exec>
+    <exec executable="app/console">
+      <arg value="doctrine:schema:update" />
+      <arg value="-n" />
+      <arg value="--complete" />
+      <arg value="--force" />
+    </exec>
+    <exec executable="app/console">
+      <arg value="assetic:dump" />
+      <arg value="-n" />
+      <arg value="--env=prod" />
+      <arg value="--no-debug" />
+    </exec>
+    <exec executable="app/console">
+      <arg value="assets:install" />
+      <arg value="-n" />
+      <arg value="--env=prod" />
+      <arg value="--no-debug" />
+      <arg value="web" />
+    </exec>
+  </target>
+</project>
