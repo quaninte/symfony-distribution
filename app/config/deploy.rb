@@ -6,6 +6,8 @@ set :application,             "io-symfony-standard"
 
 #
 # Nothing below needs to be edited
+# @see config/deploy/beta.rb
+# @see config/deploy/production.rb
 #
 
 set :scm,                     :git
