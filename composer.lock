@@ -26,8 +26,8 @@
         {
             "package": "iostudio/framework-bundle",
             "version": "dev-master",
-            "source-reference": "3d4e366aa2055446c0792ffeb3fc44497763c6ea",
-            "commit-date": "1342183252"
+            "source-reference": "9238cae22d35659d709870b4629f0b6bf8aa9098",
+            "commit-date": "1342186212"
         },
         {
             "package": "jms/aop-bundle",
@@ -74,12 +74,6 @@
         {
             "package": "sensio/framework-extra-bundle",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "sensio/framework-extra-bundle",
-            "version": "dev-master",
             "source-reference": "e9ac8f1a911ed29e30296c7f1549f53d4c94eddf",
             "commit-date": "1342084432"
         },
@@ -100,12 +94,6 @@
             "version": "dev-master",
             "source-reference": "420e227f2238d2c21e464c15f103540d83b0d23b",
             "commit-date": "1341949155"
-        },
-        {
-            "package": "symfony/assetic-bundle",
-            "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/assetic-bundle",
