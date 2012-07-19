@@ -3,7 +3,6 @@ Dir['vendor/bundles/*/*/recipes/*.rb'].each { |bundle| load(bundle) }
 load Gem.find_files('symfony2.rb').last.to_s
 load 'app/config/deploy'
 require 'rubygems' 
-require 'railsless-deploy'
 # Load in the multistage configuration and setup the stages
 set :stages, %w(beta production)
 require 'capistrano/ext/multistage'
