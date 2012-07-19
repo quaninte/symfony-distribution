@@ -31,3 +31,11 @@ build/code-browser/
 build/coverage/
 build/logs/
 build/pdepend/
+
+#
+# Misc. ignores
+#
+.DS_Store
+*.swp
+*.swo
+
