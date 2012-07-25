@@ -14,6 +14,7 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('iostudioDefaultBundle:Default:index.html.twig');
+        $_format = $this->getRequest()->attributes->get('_mobile') ? 'mobile' : 'html';
+        return $this->render('iostudioDefaultBundle:Default:index.'.$_format.'.twig');
     }
 }
