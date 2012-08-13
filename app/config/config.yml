@@ -36,7 +36,7 @@ assetic:
     filters:
         cssrewrite: ~
         scssphp:
-            file: %kernel.root_dir%/../vendor/leafo/scssphp/scssc.inc.php
+            file: %kernel.root_dir%/../vendor/leafo/scssphp/scss.inc.php
             apply_to: "\.scss$"
         lessphp:
             file: %kernel.root_dir%/../vendor/leafo/lessphp/lessc.inc.php
