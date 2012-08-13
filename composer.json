@@ -30,7 +30,8 @@
         "jms/security-extra-bundle": "1.1.*",
         "jms/di-extra-bundle": "1.0.*",
         "iostudio/framework-bundle": "dev-master",
-        "iostudio/google-analytics-bundle": "dev-master"
+        "iostudio/google-analytics-bundle": "dev-master",
+        "leafo/lessphp": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
