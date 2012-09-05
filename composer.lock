@@ -62,20 +62,14 @@
         {
             "package": "gedmo/doctrine-extensions",
             "version": "dev-master",
-            "alias-pretty-version": "2.3.x-dev",
-            "alias-version": "2.3.9999999.9999999-dev"
-        },
-        {
-            "package": "gedmo/doctrine-extensions",
-            "version": "dev-master",
             "source-reference": "4e8a3a920eedaba4e76c26a92347e9b47bb7ffdf",
             "commit-date": "1346486653"
         },
         {
             "package": "iostudio/framework-bundle",
             "version": "dev-master",
-            "source-reference": "5acfdf3b7cd6d796b9f2d1ac90ce4852af94149e",
-            "commit-date": "1346790931"
+            "source-reference": "085650eefaecdecba45672f3707e9111a014bb49",
+            "commit-date": "1346873073"
         },
         {
             "package": "iostudio/google-analytics-bundle",
@@ -144,8 +138,14 @@
         {
             "package": "sensio/distribution-bundle",
             "version": "dev-master",
-            "source-reference": "645f2044cce2e2382b0e0dd6d1787b3d619d7a21",
-            "commit-date": "1346834239"
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "sensio/distribution-bundle",
+            "version": "dev-master",
+            "source-reference": "749aa6bbb2fac33091804d56a35339dc4c65f4a6",
+            "commit-date": "1346859132"
         },
         {
             "package": "sensio/framework-extra-bundle",
@@ -198,8 +198,8 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "1dd153205b1db5b9ddcb4bfd4825ce6b8c4f41e7",
-            "commit-date": "1346770195"
+            "source-reference": "00ec9b53911c0ff288439ac911d0f0edde176b6c",
+            "commit-date": "1346859854"
         },
         {
             "package": "twig/extensions",
