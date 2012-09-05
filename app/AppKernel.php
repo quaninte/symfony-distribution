@@ -23,7 +23,7 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new iostudio\FrameworkBundle\iostudioFrameworkBundle(),
             new iostudio\GoogleAnalyticsBundle\iostudioGoogleAnalyticsBundle(),
-            new iostudio\DefaultBundle\iostudioDefaultBundle(),
+            new iostudio\AppBundle\iostudioAppBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

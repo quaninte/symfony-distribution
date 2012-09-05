@@ -1,5 +1,5 @@
-iostudioDefaultBundle:
-    resource: "@iostudioDefaultBundle/Controller/"
+iostudio_app:
+    resource: "@iostudioAppBundle/Controller/"
     type:     annotation
     prefix:   /
 

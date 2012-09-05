@@ -6,11 +6,11 @@
 
     <!--
     <parameters>
-        <parameter key="iostudio_default.example.class">iostudio\DefaultBundle\Example</parameter>
+        <parameter key="iostudio_app.example.class">iostudio\AppBundle\Example</parameter>
     </parameters>
 
     <services>
-        <service id="iostudio_default.example" class="%iostudio_default.example.class%">
+        <service id="iostudio_app.example" class="%iostudio_app.example.class%">
             <argument type="service" id="service_id" />
             <argument>plain_value</argument>
             <argument>%parameter_name%</argument>

@@ -1,6 +1,6 @@
 <?php
 
-namespace iostudio\DefaultBundle\Tests\Controller;
+namespace iostudio\AppBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

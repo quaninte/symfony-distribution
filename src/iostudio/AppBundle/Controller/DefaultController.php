@@ -1,6 +1,6 @@
 <?php
 
-namespace iostudio\DefaultBundle\Controller;
+namespace iostudio\AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -10,11 +10,9 @@ class DefaultController extends Controller
 {
     /**
      * @Route("/", name="homepage")
-     * @Template()
      */
     public function indexAction()
     {
-        $_format = $this->getRequest()->attributes->get('_mobile') ? 'mobile' : 'html';
-        return $this->render('iostudioDefaultBundle:Default:index.'.$_format.'.twig');
+        return $this->render('iostudioAppBundle:Default:index.html.twig');
     }
 }
