@@ -582,7 +582,7 @@
             "source": {
                 "type": "git",
                 "url": "git@git.iostudiohq.com:iostudioFrameworkBundle.git",
-                "reference": "4a0ca800e60a78a8806daadfaaef5e2dcf050a94"
+                "reference": "108bd1f5c5db85af12b78a260f031f0eb997bae2"
             },
             "require": {
                 "sensio/generator-bundle": "dev-master",
@@ -591,7 +591,7 @@
                 "gedmo/doctrine-extensions": "dev-master",
                 "garetjax/phpbrowscap": "dev-master"
             },
-            "time": "1347980717",
+            "time": "1347990070",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -608,7 +608,7 @@
                     "email": "Joshua.Estes@iostudio.com"
                 }
             ],
-            "description": "Google Analytics",
+            "description": "iostudio framework bundle",
             "homepage": "http://git.iostudiohq.com/?p=iostudioFrameworkBundle.git",
             "support": {
                 "email": "joshua.estes@iostudio.com",
@@ -667,7 +667,7 @@
                 "symfony/framework-bundle": "2.*",
                 "jms/cg": "1.0.0"
             },
-            "time": "2012-01-08 02:50:26",
+            "time": "2012-01-08 08:50:26",
             "type": "symfony-bundle",
             "installation-source": "dist",
             "autoload": {
@@ -709,7 +709,7 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-01-08 02:40:52",
+            "time": "2012-01-08 08:40:52",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -811,7 +811,7 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-01-08 03:32:49",
+            "time": "2012-01-08 09:32:49",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -983,7 +983,7 @@
                 "reference": "v0.3.6",
                 "shasum": ""
             },
-            "time": "2012-08-08 17:21:47",
+            "time": "2012-08-08 22:21:47",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -1020,7 +1020,7 @@
                 "reference": "v0.0.3",
                 "shasum": ""
             },
-            "time": "2012-08-04 13:11:09",
+            "time": "2012-08-04 18:11:09",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1049,12 +1049,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog",
-                "reference": "0f3dc95c4a0ed7d17bec237d07af3da6c0c1071a"
+                "reference": "09b3a80cfaf3e323e348a5e817afeee98d5e6b48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Seldaek/monolog/zipball/0f3dc95c4a0ed7d17bec237d07af3da6c0c1071a",
-                "reference": "0f3dc95c4a0ed7d17bec237d07af3da6c0c1071a",
+                "url": "https://github.com/Seldaek/monolog/zipball/09b3a80cfaf3e323e348a5e817afeee98d5e6b48",
+                "reference": "09b3a80cfaf3e323e348a5e817afeee98d5e6b48",
                 "shasum": ""
             },
             "require": {
@@ -1068,7 +1068,7 @@
                 "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
                 "ext-mongo": "Allow sending log messages to a MongoDB server"
             },
-            "time": "1347363321",
+            "time": "1347983448",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1392,12 +1392,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/MonologBundle",
-                "reference": "b7318480e6f8bf5579d6b3cd856850302e7ba8d8"
+                "reference": "e1acd0a0da661bdb0f5378a60226ae6e30ec55c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/MonologBundle/zipball/b7318480e6f8bf5579d6b3cd856850302e7ba8d8",
-                "reference": "b7318480e6f8bf5579d6b3cd856850302e7ba8d8",
+                "url": "https://github.com/symfony/MonologBundle/zipball/e1acd0a0da661bdb0f5378a60226ae6e30ec55c6",
+                "reference": "e1acd0a0da661bdb0f5378a60226ae6e30ec55c6",
                 "shasum": ""
             },
             "require": {
@@ -1411,7 +1411,7 @@
                 "symfony/yaml": "2.1.*",
                 "symfony/config": "2.1.*"
             },
-            "time": "1347283885",
+            "time": "1347983520",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -1486,12 +1486,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "ff1b990075be41c0b85702f2c9bde988d30f4d6b"
+                "reference": "5a4a73ef9461bab9c88335a0d7e3ece5850225ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/zipball/ff1b990075be41c0b85702f2c9bde988d30f4d6b",
-                "reference": "ff1b990075be41c0b85702f2c9bde988d30f4d6b",
+                "url": "https://github.com/symfony/symfony/zipball/5a4a73ef9461bab9c88335a0d7e3ece5850225ae",
+                "reference": "5a4a73ef9461bab9c88335a0d7e3ece5850225ae",
                 "shasum": ""
             },
             "require": {
@@ -1540,7 +1540,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "dev-master"
             },
-            "time": "1347914517",
+            "time": "1347986688",
             "type": "library",
             "extra": {
                 "branch-alias": {
