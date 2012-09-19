@@ -7,8 +7,8 @@
     },
     "repositories": [
         {
-            "type": "git",
-            "url": "git@git.iostudiohq.com:iostudioFrameworkBundle.git"
+            "type": "composer",
+            "url": "http://satis.iostudiohq.com"
         },
         {
             "type": "git",

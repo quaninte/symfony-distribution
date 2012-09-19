@@ -1,5 +1,5 @@
 {
-    "hash": "668c57a6125147001d6d8686dff09fb7",
+    "hash": "165fc8ea3c876047fa69ef6d73d4ab36",
     "packages": [
         {
             "name": "beberlei/DoctrineExtensions",
@@ -361,12 +361,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations",
-                "reference": "17f4b56bf0af0274cabdf3ae9b644059246d66b7"
+                "reference": "ff84c7f403a622409d301eb6bdfda1becb11380a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/migrations/zipball/17f4b56bf0af0274cabdf3ae9b644059246d66b7",
-                "reference": "17f4b56bf0af0274cabdf3ae9b644059246d66b7",
+                "url": "https://github.com/doctrine/migrations/zipball/ff84c7f403a622409d301eb6bdfda1becb11380a",
+                "reference": "ff84c7f403a622409d301eb6bdfda1becb11380a",
                 "shasum": ""
             },
             "require": {
@@ -375,7 +375,7 @@
                 "doctrine/common": ">=2.0",
                 "doctrine/dbal": ">=2.0"
             },
-            "time": "1347005884",
+            "time": "1347994329",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -384,7 +384,7 @@
                 }
             },
             "license": [
-                "LGPL"
+                "MIT"
             ],
             "authors": [
                 {
@@ -582,16 +582,16 @@
             "source": {
                 "type": "git",
                 "url": "git@git.iostudiohq.com:iostudioFrameworkBundle.git",
-                "reference": "108bd1f5c5db85af12b78a260f031f0eb997bae2"
+                "reference": "e024bc00e544e061dd49798fa9ae2706d46f3725"
             },
             "require": {
-                "sensio/generator-bundle": "dev-master",
+                "symfony/symfony": "2.1.*",
                 "beberlei/doctrineextensions": "dev-master",
                 "pagerfanta/pagerfanta": "dev-master",
                 "gedmo/doctrine-extensions": "dev-master",
                 "garetjax/phpbrowscap": "dev-master"
             },
-            "time": "1347990070",
+            "time": "1347996112",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -667,7 +667,7 @@
                 "symfony/framework-bundle": "2.*",
                 "jms/cg": "1.0.0"
             },
-            "time": "2012-01-08 08:50:26",
+            "time": "2012-01-08 14:50:26",
             "type": "symfony-bundle",
             "installation-source": "dist",
             "autoload": {
@@ -709,7 +709,7 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-01-08 08:40:52",
+            "time": "2012-01-08 14:40:52",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -811,7 +811,7 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-01-08 09:32:49",
+            "time": "2012-01-08 15:32:49",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -983,7 +983,7 @@
                 "reference": "v0.3.6",
                 "shasum": ""
             },
-            "time": "2012-08-08 22:21:47",
+            "time": "2012-08-09 03:21:47",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -1020,7 +1020,7 @@
                 "reference": "v0.0.3",
                 "shasum": ""
             },
-            "time": "2012-08-04 18:11:09",
+            "time": "2012-08-04 23:11:09",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1183,19 +1183,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensio/SensioFrameworkExtraBundle",
-                "reference": "6d393099b17f301cc09a1d586292ed0b84763011"
+                "reference": "86a68df44eb50a64042d05a3f09548d2c21d4456"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sensio/SensioFrameworkExtraBundle/zipball/6d393099b17f301cc09a1d586292ed0b84763011",
-                "reference": "6d393099b17f301cc09a1d586292ed0b84763011",
+                "url": "https://github.com/sensio/SensioFrameworkExtraBundle/zipball/86a68df44eb50a64042d05a3f09548d2c21d4456",
+                "reference": "86a68df44eb50a64042d05a3f09548d2c21d4456",
                 "shasum": ""
             },
             "require": {
                 "symfony/framework-bundle": "2.1.*",
                 "doctrine/common": ">=2.1,<2.4-dev"
             },
-            "time": "1347780475",
+            "time": "1348064274",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -1230,30 +1230,31 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensio/SensioGeneratorBundle",
-                "reference": "v2.1.0"
+                "reference": "f5bda1014f5f124a0fd881644664493e36a09ad0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sensio/SensioGeneratorBundle/zipball/v2.1.0",
-                "reference": "v2.1.0",
+                "url": "https://github.com/sensio/SensioGeneratorBundle/zipball/f5bda1014f5f124a0fd881644664493e36a09ad0",
+                "reference": "f5bda1014f5f124a0fd881644664493e36a09ad0",
                 "shasum": ""
             },
             "require": {
-                "symfony/framework-bundle": "2.1.*"
+                "symfony/framework-bundle": "2.2.*",
+                "symfony/console": "2.2.*"
             },
             "require-dev": {
-                "symfony/doctrine-bridge": "2.1.*",
                 "doctrine/orm": ">=2.1,<2.4-dev",
-                "twig/twig": ">=1.8,<2.0-dev"
+                "twig/twig": ">=1.8,<2.0-dev",
+                "symfony/doctrine-bridge": "2.2.*"
             },
             "suggest": {
                 "doctrine/doctrine-bundle": "to generate entities and their crud controller"
             },
-            "time": "1346138171",
+            "time": "1348070473",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.1.x-dev"
+                    "dev-master": "2.2.x-dev"
                 }
             },
             "installation-source": "source",
@@ -1486,12 +1487,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "5a4a73ef9461bab9c88335a0d7e3ece5850225ae"
+                "reference": "f1e6063c0a42065adf026811127f3db1d7a79eb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/zipball/5a4a73ef9461bab9c88335a0d7e3ece5850225ae",
-                "reference": "5a4a73ef9461bab9c88335a0d7e3ece5850225ae",
+                "url": "https://github.com/symfony/symfony/zipball/f1e6063c0a42065adf026811127f3db1d7a79eb5",
+                "reference": "f1e6063c0a42065adf026811127f3db1d7a79eb5",
                 "shasum": ""
             },
             "require": {
@@ -1540,7 +1541,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "dev-master"
             },
-            "time": "1347986688",
+            "time": "1348035223",
             "type": "library",
             "extra": {
                 "branch-alias": {
