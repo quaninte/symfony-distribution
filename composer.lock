@@ -1,5 +1,5 @@
 {
-    "hash": "165fc8ea3c876047fa69ef6d73d4ab36",
+    "hash": "3c2fd07be848a20d1e9f00956659fa23",
     "packages": [
         {
             "name": "beberlei/DoctrineExtensions",
@@ -33,18 +33,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common",
-                "reference": "24c761bf0f8337064b961a8fad85631a561d26c7"
+                "reference": "bb0aebbf234db52df476a2b473d434745b34221c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/common/zipball/24c761bf0f8337064b961a8fad85631a561d26c7",
-                "reference": "24c761bf0f8337064b961a8fad85631a561d26c7",
+                "url": "https://github.com/doctrine/common/zipball/bb0aebbf234db52df476a2b473d434745b34221c",
+                "reference": "bb0aebbf234db52df476a2b473d434745b34221c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "1347882477",
+            "time": "1348120518",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -142,19 +142,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal",
-                "reference": "c4fe3499781944f7f2b056fd164cfedc67cc0130"
+                "reference": "fdc866a37959e43620e4f7ec519dc7dd8e30fc5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/dbal/zipball/c4fe3499781944f7f2b056fd164cfedc67cc0130",
-                "reference": "c4fe3499781944f7f2b056fd164cfedc67cc0130",
+                "url": "https://github.com/doctrine/dbal/zipball/fdc866a37959e43620e4f7ec519dc7dd8e30fc5b",
+                "reference": "fdc866a37959e43620e4f7ec519dc7dd8e30fc5b",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
                 "doctrine/common": "2.3.*"
             },
-            "time": "1347882607",
+            "time": "1348120597",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -361,21 +361,26 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations",
-                "reference": "ff84c7f403a622409d301eb6bdfda1becb11380a"
+                "reference": "3dd738b2a709f4d5185c144292189c6e708ca37d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/migrations/zipball/ff84c7f403a622409d301eb6bdfda1becb11380a",
-                "reference": "ff84c7f403a622409d301eb6bdfda1becb11380a",
+                "url": "https://github.com/doctrine/migrations/zipball/3dd738b2a709f4d5185c144292189c6e708ca37d",
+                "reference": "3dd738b2a709f4d5185c144292189c6e708ca37d",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
-                "ext-pdo": "*",
-                "doctrine/common": ">=2.0",
-                "doctrine/dbal": ">=2.0"
+                "doctrine/dbal": ">=2.0,<2.5.x-dev"
             },
-            "time": "1347994329",
+            "require-dev": {
+                "symfony/console": "2.*",
+                "symfony/yaml": "2.*"
+            },
+            "suggest": {
+                "symfony/console": "to run the migration from the console"
+            },
+            "time": "1348090059",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -384,7 +389,7 @@
                 }
             },
             "license": [
-                "MIT"
+                "LGPL"
             ],
             "authors": [
                 {
@@ -410,12 +415,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/doctrine/doctrine2.git",
-                "reference": "c6101317cd71cbf320e96f4ce461f8a5a54bf56d"
+                "reference": "ea2b28857830720460a345c80c6e7d3f6adae93a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/doctrine2/zipball/c6101317cd71cbf320e96f4ce461f8a5a54bf56d",
-                "reference": "c6101317cd71cbf320e96f4ce461f8a5a54bf56d",
+                "url": "https://github.com/doctrine/doctrine2/zipball/ea2b28857830720460a345c80c6e7d3f6adae93a",
+                "reference": "ea2b28857830720460a345c80c6e7d3f6adae93a",
                 "shasum": ""
             },
             "require": {
@@ -427,7 +432,7 @@
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
             },
-            "time": "1347883749",
+            "time": "1348121015",
             "bin": [
                 "bin/doctrine",
                 "bin/doctrine.php"
@@ -667,7 +672,7 @@
                 "symfony/framework-bundle": "2.*",
                 "jms/cg": "1.0.0"
             },
-            "time": "2012-01-08 14:50:26",
+            "time": "2012-01-08 20:50:26",
             "type": "symfony-bundle",
             "installation-source": "dist",
             "autoload": {
@@ -709,7 +714,7 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-01-08 14:40:52",
+            "time": "2012-01-08 20:40:52",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -811,7 +816,7 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-01-08 15:32:49",
+            "time": "2012-01-08 21:32:49",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -983,7 +988,7 @@
                 "reference": "v0.3.6",
                 "shasum": ""
             },
-            "time": "2012-08-09 03:21:47",
+            "time": "2012-08-09 08:21:47",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -1020,7 +1025,7 @@
                 "reference": "v0.0.3",
                 "shasum": ""
             },
-            "time": "2012-08-04 23:11:09",
+            "time": "2012-08-05 04:11:09",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1137,12 +1142,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensio/SensioDistributionBundle",
-                "reference": "2eee3cb4cd761c851f0d766649fb9ff6f4c97002"
+                "reference": "v2.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sensio/SensioDistributionBundle/zipball/2eee3cb4cd761c851f0d766649fb9ff6f4c97002",
-                "reference": "2eee3cb4cd761c851f0d766649fb9ff6f4c97002",
+                "url": "https://github.com/sensio/SensioDistributionBundle/zipball/v2.1.1",
+                "reference": "v2.1.1",
                 "shasum": ""
             },
             "require": {
@@ -1225,36 +1230,33 @@
         },
         {
             "name": "sensio/generator-bundle",
-            "version": "dev-master",
+            "version": "2.1.x-dev",
             "target-dir": "Sensio/Bundle/GeneratorBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensio/SensioGeneratorBundle",
-                "reference": "f5bda1014f5f124a0fd881644664493e36a09ad0"
+                "reference": "3a65c9bf7d31aecacffc15a48f5eb2ece3615ef0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sensio/SensioGeneratorBundle/zipball/f5bda1014f5f124a0fd881644664493e36a09ad0",
-                "reference": "f5bda1014f5f124a0fd881644664493e36a09ad0",
+                "url": "https://github.com/sensio/SensioGeneratorBundle/zipball/3a65c9bf7d31aecacffc15a48f5eb2ece3615ef0",
+                "reference": "3a65c9bf7d31aecacffc15a48f5eb2ece3615ef0",
                 "shasum": ""
             },
             "require": {
-                "symfony/framework-bundle": "2.2.*",
-                "symfony/console": "2.2.*"
+                "symfony/framework-bundle": "2.1.*",
+                "symfony/console": "2.1.*"
             },
             "require-dev": {
+                "symfony/doctrine-bridge": "2.1.*",
                 "doctrine/orm": ">=2.1,<2.4-dev",
-                "twig/twig": ">=1.8,<2.0-dev",
-                "symfony/doctrine-bridge": "2.2.*"
+                "twig/twig": ">=1.8,<2.0-dev"
             },
-            "suggest": {
-                "doctrine/doctrine-bundle": "to generate entities and their crud controller"
-            },
-            "time": "1348070473",
+            "time": "1348030981",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2.x-dev"
+                    "dev-master": "2.1.x-dev"
                 }
             },
             "installation-source": "source",
@@ -1393,26 +1395,26 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/MonologBundle",
-                "reference": "e1acd0a0da661bdb0f5378a60226ae6e30ec55c6"
+                "reference": "51517152a608926ee6b40ed8cfbba1a708f0a14f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/MonologBundle/zipball/e1acd0a0da661bdb0f5378a60226ae6e30ec55c6",
-                "reference": "e1acd0a0da661bdb0f5378a60226ae6e30ec55c6",
+                "url": "https://github.com/symfony/MonologBundle/zipball/51517152a608926ee6b40ed8cfbba1a708f0a14f",
+                "reference": "51517152a608926ee6b40ed8cfbba1a708f0a14f",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
                 "monolog/monolog": "1.*",
-                "symfony/monolog-bridge": "2.1.*",
-                "symfony/dependency-injection": "2.1.*",
-                "symfony/config": "2.1.*"
+                "symfony/monolog-bridge": ">=2.1.0,<2.3-dev",
+                "symfony/dependency-injection": ">=2.1.0,<2.3-dev",
+                "symfony/config": ">=2.1.0,<2.3-dev"
             },
             "require-dev": {
-                "symfony/yaml": "2.1.*",
-                "symfony/config": "2.1.*"
+                "symfony/yaml": ">=2.1.0,<2.3-dev",
+                "symfony/config": ">=2.1.0,<2.3-dev"
             },
-            "time": "1347983520",
+            "time": "1348137624",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -1448,26 +1450,26 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/SwiftmailerBundle",
-                "reference": "d2eae9385c029cbac031a90e6d2abc74b889a562"
+                "reference": "e055faf5d7279f3c01ffd58f1548e0fc524b71d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/SwiftmailerBundle/zipball/d2eae9385c029cbac031a90e6d2abc74b889a562",
-                "reference": "d2eae9385c029cbac031a90e6d2abc74b889a562",
+                "url": "https://github.com/symfony/SwiftmailerBundle/zipball/e055faf5d7279f3c01ffd58f1548e0fc524b71d1",
+                "reference": "e055faf5d7279f3c01ffd58f1548e0fc524b71d1",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
-                "symfony/swiftmailer-bridge": "2.1.*",
-                "swiftmailer/swiftmailer": ">=4.2.0,<4.3-dev"
+                "swiftmailer/swiftmailer": ">=4.2.0,<4.3-dev",
+                "symfony/swiftmailer-bridge": ">=2.1.0,<2.3-dev"
             },
             "require-dev": {
-                "symfony/dependency-injection": "2.1.*",
-                "symfony/http-kernel": "2.1.*",
-                "symfony/config": "2.1.*",
-                "symfony/yaml": "2.1.*"
+                "symfony/dependency-injection": ">=2.1.0,<2.3-dev",
+                "symfony/http-kernel": ">=2.1.0,<2.3-dev",
+                "symfony/config": ">=2.1.0,<2.3-dev",
+                "symfony/yaml": ">=2.1.0,<2.3-dev"
             },
-            "time": "1346243146",
+            "time": "1348137776",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -1479,7 +1481,22 @@
                 "psr-0": {
                     "Symfony\\Bundle\\SwiftmailerBundle": ""
                 }
-            }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony SwiftmailerBundle",
+            "homepage": "http://symfony.com"
         },
         {
             "name": "symfony/symfony",
@@ -1487,12 +1504,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "f1e6063c0a42065adf026811127f3db1d7a79eb5"
+                "reference": "9fd2baa502ea6700461cce89f2295a695c20e430"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/zipball/f1e6063c0a42065adf026811127f3db1d7a79eb5",
-                "reference": "f1e6063c0a42065adf026811127f3db1d7a79eb5",
+                "url": "https://github.com/symfony/symfony/zipball/9fd2baa502ea6700461cce89f2295a695c20e430",
+                "reference": "9fd2baa502ea6700461cce89f2295a695c20e430",
                 "shasum": ""
             },
             "require": {
@@ -1541,7 +1558,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "dev-master"
             },
-            "time": "1348035223",
+            "time": "1348130370",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1666,7 +1683,6 @@
         "symfony/assetic-bundle": 20,
         "symfony/swiftmailer-bundle": 20,
         "symfony/monolog-bundle": 20,
-        "sensio/generator-bundle": 20,
         "iostudio/framework-bundle": 20,
         "iostudio/google-analytics-bundle": 20,
         "doctrine/doctrine-fixtures-bundle": 20,
