@@ -1,0 +1,6 @@
+body {
+	background-color: yellow;
+}
+.tabs > li {
+	@include column(4); // 33%
+}
