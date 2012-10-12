@@ -19,39 +19,39 @@ set :group_writable,          false
 set :keep_releases,           3
 ssh_options[:forward_agent] = true
 set :use_composer,            true
-set :update_vendors,          true
+set :update_vendors,          false
 set :dump_assetic_assets,     true
 
-namespace :deploy do
-  desc "Customize the finalize_update task to work with wordpress." 
-  task :finalize_update, :except => { :no_release => true } do
-    # Share common files & folders
-    share_childs
-  end
-
-  desc "Symlink static directories and static files that need to remain between deployments." 
-  task :share_childs do
-    if shared_children
-      shared_children.each do |link|
-        run "mkdir -p #{shared_path}/#{link}" 
-        run "if [ -d #{release_path}/#{link} ] ; then rm -rf #{release_path}/#{link}; fi" 
-        run "ln -nfs #{shared_path}/#{link} #{release_path}/#{link}" 
-      end
-    end
-    if shared_files
-      shared_files.each do |link|
-        link_dir = File.dirname("#{shared_path}/#{link}")
-        run "mkdir -p #{link_dir}" 
-        run "touch #{shared_path}/#{link}" 
-        run "ln -nfs #{shared_path}/#{link} #{release_path}/#{link}" 
-      end
-    end
-  end
-end
-
-after("deploy:symlink") do
-     deploy.cleanup
-end
+#namespace :deploy do
+#  desc "Customize the finalize_update task to work with wordpress." 
+#  task :finalize_update, :except => { :no_release => true } do
+#    # Share common files & folders
+#    share_childs
+#  end
+#
+#  desc "Symlink static directories and static files that need to remain between deployments." 
+#  task :share_childs do
+#    if shared_children
+#      shared_children.each do |link|
+#        run "mkdir -p #{shared_path}/#{link}" 
+#        run "if [ -d #{release_path}/#{link} ] ; then rm -rf #{release_path}/#{link}; fi" 
+#        run "ln -nfs #{shared_path}/#{link} #{release_path}/#{link}" 
+#      end
+#    end
+#    if shared_files
+#      shared_files.each do |link|
+#        link_dir = File.dirname("#{shared_path}/#{link}")
+#        run "mkdir -p #{link_dir}" 
+#        run "touch #{shared_path}/#{link}" 
+#        run "ln -nfs #{shared_path}/#{link} #{release_path}/#{link}" 
+#      end
+#    end
+#  end
+#end
+#
+#after("deploy:symlink") do
+#     deploy.cleanup
+#end
 
 =begin
 This will copy a robots.txt.STAGE file and any other file you need to the shared

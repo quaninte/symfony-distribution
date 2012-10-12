@@ -2,7 +2,7 @@
 # You should only need to edit the domain, deploy_to, user.
 #
 set :domain          , ""
-set :deploy_to       , "/var/www/vhosts/DOMAINNAME.com/httpdocs"
+set :deploy_to       , "/var/www/vhosts/#{domain}/httpdocs"
 set :user            , ""
 set :branch          , "master"
 set :can_cold_deploy , true
