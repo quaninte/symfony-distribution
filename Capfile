@@ -7,4 +7,4 @@ require 'rubygems'
 set :stages, %w(beta production)
 require 'capistrano/ext/multistage'
 set :shared_children,    %w(web/uploads vendor app/logs)
-set :shared_files,      %w(app/config/parameters.yml web/robots.txt)
+set :shared_files,      %w()
