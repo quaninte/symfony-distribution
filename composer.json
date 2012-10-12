@@ -2,6 +2,11 @@
     "name": "iostudio/framework-standard-edition",
     "description": "The \"iostudio Standard Edition\" distribution",
     "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
     "autoload": {
         "psr-0": { "": "src/" }
     },
@@ -9,10 +14,6 @@
         {
             "type": "composer",
             "url": "http://satis.iostudiohq.com"
-        },
-        {
-            "type": "git",
-            "url": "git@git.iostudiohq.com:iostudioGoogleAnalyticsBundle.git"
         }
     ],
     "require": {

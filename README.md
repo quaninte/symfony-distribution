@@ -33,3 +33,17 @@ If you don't have Sass & Compass at all
     sudo gem update --system
     sudo gem install compass
     sudo gem install zurb-foundation
+    
+Testing
+-------
+
+WARINING: This is destructive to your database.
+
+To run tests you must have `ant` installed on your machine. To begin
+the build, run the `ant` command. There are other tasks that can be run
+such as building documentation, but those are not included in the main
+build. You will also need to have phpunit and some other tools installed
+on your machine in order to use this.
+
+Also note, that this is the command that is run on Jenkins so if you want
+to see if your code is working, then this is how you do it.

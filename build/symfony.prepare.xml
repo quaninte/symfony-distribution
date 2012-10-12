@@ -9,7 +9,9 @@
     </exec>
     <exec executable="php">
       <arg value="composer.phar" />
-      <arg value="update" />
+      <arg value="install" />
+      <arg value="--dev" />
+      <arg value="--verbose" />
     </exec>
     <exec executable="app/console">
       <arg value="doctrine:database:drop" />
@@ -25,6 +27,10 @@
       <arg value="-n" />
       <arg value="--complete" />
       <arg value="--force" />
+    </exec>
+    <exec executable="app/console">
+      <arg value="doctrine:fixtures:load" />
+      <arg value="-n" />
     </exec>
     <exec executable="app/console">
       <arg value="assetic:dump" />

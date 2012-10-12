@@ -7,6 +7,8 @@
   <!--
   This is the base location where the files can be downloaded at
   ie: http://example.com/{FILENAME}
+
+  NOTE: Must be public, cannot be behind firewall/login screen
   -->
   <property name="base.repository" value="http://git.iostudiohq.com/ContinuousIntegration/blob/master/" />
 
