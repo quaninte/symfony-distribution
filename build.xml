@@ -3,24 +3,12 @@
   <description>
     Symfony 2 Build File
   </description>
-  <!--
-  These should now be the only things you need to edit. Change the values to
-  what you need to. The rest can be updated by just running "ant update"
-  -->
-  <property name="db.host" value="127.0.0.1" />
-  <!--
-  Your database name should end with _test since running this build file WILL drop
-  that database then create the database.
-  -->
-  <property name="db.name" value="project_test" />
-  <property name="db.user" value="root" />
-  <property name="db.pass" value="root" />
 
   <!--
   This is the base location where the files can be downloaded at
   ie: http://example.com/{FILENAME}
   -->
-  <property name="base.repository" value="http://git.iostudiohq.com/?p=ContinuousIntegration.git;a=blob_plain;hb=HEAD;f=" />
+  <property name="base.repository" value="http://git.iostudiohq.com/ContinuousIntegration/blob/master/" />
 
   <!--
   Nothing below here needs to be edited.

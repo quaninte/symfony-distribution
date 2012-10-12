@@ -1,6 +1,6 @@
 <project>
   <target name="build"
-          depends="prepare,lint,phploc,pdepend,phpmd,phpcs,phpcpd,phpdoc,symfony.test-all,phpcb"/>
+          depends="prepare,lint,phploc,pdepend,phpmd,phpcs,phpcpd,symfony.test-all"/>
 
   <target name="build-parallel"
           depends="prepare,lint,tools-parallel,symfony.test-all,phpcb"/>
