@@ -1,0 +1,22 @@
+// overriding foundation core mobile grid columns stuff
+
+@mixin row() {
+	width: auto; min-width: 0; margin-left: 0; margin-right: 0; @include clearfix();
+}
+
+@mixin column($columns:$columns, $behavior: false) {
+	@if $behavior == center {
+		float: none; margin: 0 auto; position: relative; min-height: 1px; padding: 0 ($columnGutter/2); width: gridCalc($columns, $totalColumns);
+	} @else if $behavior == collapse {
+		float: left; position: relative; min-height: 1px; padding: 0; width: gridCalc($columns, $totalColumns);
+	} @else {
+		float: left; width: gridCalc($columns, $totalColumns); padding: 0 ($columnGutter/2);
+	}
+}
+
+@mixin push($push:1) {
+	left: gridCalc($push, $totalColumns);
+}
+@mixin pull($push:1) {
+	right: gridCalc($push, $totalColumns);
+}

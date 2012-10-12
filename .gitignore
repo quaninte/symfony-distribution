@@ -19,8 +19,8 @@ web/bundles
 # out into the css and js directories and
 # we don't want to track those files.
 #
-#web/css/*
-#web/js/*
+web/css/*
+web/js/*
 web/.sass-cache
 
 #
