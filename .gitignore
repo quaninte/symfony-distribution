@@ -27,11 +27,7 @@ web/.sass-cache
 # This is for we run builds for testing the
 # code and such
 #
-build/api/
-build/code-browser/
-build/coverage/
-build/logs/
-build/pdepend/
+build/
 
 #
 # Misc. ignores
