@@ -1,133 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+The basedir is where the base symfony2 project is.
+-->
 <project name="symfony2" default="build" basedir=".">
-  <description>
-    Symfony 2 Build File
-  </description>
+    <description>Symfony 2 Build File</description>
 
-  <!--
-  This is the base location where the files can be downloaded at
-  ie: http://example.com/{FILENAME}
-
-  NOTE: Must be public, cannot be behind firewall/login screen
-  -->
-  <property name="base.repository" value="http://git.iostudiohq.com/ContinuousIntegration/blob/master/" />
-
-  <!--
-  Nothing below here needs to be edited.
-  -->
-
-  <import file="${basedir}/build/build.xml" />
-  <import file="${basedir}/build/clean.xml" />
-  <import file="${basedir}/build/symfony.clean.xml" />
-  <import file="${basedir}/build/prepare.xml" />
-  <import file="${basedir}/build/symfony.prepare.xml" />
-
-  <!--
-  Checks the php syntax
-  -->
-  <import file="${basedir}/build/lint.xml" />
-
-  <!--
-  PHP Lines of Code
-  @see http://sebastianbergmann.github.com/phploc/
-  -->
-  <import file="${basedir}/build/phploc.xml" />
-
-  <!--
-  PHP Depend
-  @see http://pdepend.org/
-  -->
-  <import file="${basedir}/build/pdepend.xml" />
-
-  <!--
-  PHP Mess Detector
-  @see http://phpmd.org/
-  -->
-  <import file="${basedir}/build/phpmd.xml" />
-
-  <!--
-  PHP CodeSniffer
-  @see http://pear.php.net/package/PHP_CodeSniffer
-  -->
-  <import file="${basedir}/build/phpcs.xml" />
-
-  <!--
-  PHP Copy/Paste Detector
-  @see https://github.com/sebastianbergmann/phpcpd
-  -->
-  <import file="${basedir}/build/phpcpd.xml" />
-
-  <!--
-  phpDocumentor
-  @see http://www.phpdoc.org/
-  -->
-  <import file="${basedir}/build/phpdoc.xml" />
-
-  <!--
-  PHP CodeBrowser
-  @see http://pear.phpunit.de/
-  -->
-  <import file="${basedir}/build/phpcb.xml" />
-
-  <!--
-  Run ./symfony test:all
-  -->
-  <import file="${basedir}/build/symfony.test-all.xml" />
-
-  <!--
-  Update the build xml files, you can change the src to be whatever you want to
-  reflect your own repo
-  -->
-  <target name="update"
-          description="Updates all the build settings and scripts">
-    <get src="${base.repository}symfony2/build/ruleset/phpcs.xml"
-         dest="${basedir}/build/ruleset/phpcs.xml"
-         verbose="true" />
-    <get src="${base.repository}symfony2/build/ruleset/phpmd.xml"
-         dest="${basedir}/build/ruleset/phpmd.xml"
-         verbose="true" />
-    <get src="${base.repository}symfony2/build/build.xml"
-         dest="${basedir}/build/build.xml"
-         verbose="true" />
-    <get src="${base.repository}symfony2/build/clean.xml"
-         dest="${basedir}/build/clean.xml"
-         verbose="true" />
-    <get src="${base.repository}symfony2/build/lint.xml"
-         dest="${basedir}/build/lint.xml"
-         verbose="true" />
-    <get src="${base.repository}symfony2/build/pdepend.xml"
-         dest="${basedir}/build/pdepend.xml"
-         verbose="true" />
-    <get src="${base.repository}symfony2/build/phpcb.xml"
-         dest="${basedir}/build/phpcb.xml"
-         verbose="true" />
-    <get src="${base.repository}symfony2/build/phpcpd.xml"
-         dest="${basedir}/build/phpcpd.xml"
-         verbose="true" />
-    <get src="${base.repository}symfony2/build/phpcs.xml"
-         dest="${basedir}/build/phpcs.xml"
-         verbose="true" />
-    <get src="${base.repository}symfony2/build/phpdoc.xml"
-         dest="${basedir}/build/phpdoc.xml"
-         verbose="true" />
-    <get src="${base.repository}symfony2/build/phploc.xml"
-         dest="${basedir}/build/phploc.xml"
-         verbose="true" />
-    <get src="${base.repository}symfony2/build/phpmd.xml"
-         dest="${basedir}/build/phpmd.xml"
-         verbose="true" />
-    <get src="${base.repository}symfony2/build/prepare.xml"
-         dest="${basedir}/build/prepare.xml"
-         verbose="true" />
-    <get src="${base.repository}symfony2/build/symfony.clean.xml"
-         dest="${basedir}/build/symfony.clean.xml"
-         verbose="true" />
-    <get src="${base.repository}symfony2/build/symfony.prepare.xml"
-         dest="${basedir}/build/symfony.prepare.xml"
-         verbose="true" />
-    <get src="${base.repository}symfony2/build/symfony.test-all.xml"
-         dest="${basedir}/build/symfony.test-all.xml"
-         verbose="true" />
-  </target>
+    <!--
+    This is the path to the base.xml file that will build the entire project
+    -->
+    <import file="${basedir}/vendor/iostudio/standard-build/src/base.xml" />
   
 </project>
+

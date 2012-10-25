@@ -1,5 +1,5 @@
 {
-    "hash": "3c2fd07be848a20d1e9f00956659fa23",
+    "hash": "6b9b5eabe3bebc58a0f6127cdb7fb5d1",
     "packages": [
         {
             "name": "beberlei/DoctrineExtensions",
@@ -1713,7 +1713,27 @@
             ]
         }
     ],
-    "packages-dev": null,
+    "packages-dev": [
+        {
+            "name": "iostudio/standard-build",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@git.iostudiohq.com:iostudioStandardBuild.git",
+                "reference": "2695c8816a329e848e73140ec351d19aeaa8b841"
+            },
+            "time": "1351184440",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "installation-source": "source",
+            "description": "Build scripts for symfony2 projects",
+            "homepage": "http://git.iostudiohq.com/iostudioStandardBuild"
+        }
+    ],
     "aliases": [
 
     ],
@@ -1728,6 +1748,6 @@
         "iostudio/google-analytics-bundle": 20,
         "doctrine/doctrine-fixtures-bundle": 20,
         "doctrine/doctrine-migrations-bundle": 20,
-        "phpunit/phpunit": 20
+        "iostudio/standard-build": 20
     }
 }

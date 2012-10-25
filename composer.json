@@ -38,7 +38,7 @@
         "doctrine/doctrine-migrations-bundle": "dev-master"
     },
     "require-dev": {
-        "phpunit/phpunit": "dev-master"
+        "iostudio/standard-build": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
