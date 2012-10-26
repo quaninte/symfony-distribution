@@ -35,12 +35,6 @@ assetic:
     # https://github.com/kriswallsmith/assetic/tree/master/src/Assetic/Filter
     filters:
         cssrewrite: ~
-        scssphp:
-            file: %kernel.root_dir%/../vendor/leafo/scssphp/scss.inc.php
-            apply_to: "\.scss$"
-        lessphp:
-            file: %kernel.root_dir%/../vendor/leafo/lessphp/lessc.inc.php
-            apply_to: "\.less$"
         yui_js:
             jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar
         yui_css:

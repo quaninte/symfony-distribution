@@ -22,7 +22,6 @@ class AppKernel extends Kernel
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new iostudio\FrameworkBundle\iostudioFrameworkBundle(),
-            new iostudio\GoogleAnalyticsBundle\iostudioGoogleAnalyticsBundle(),
             new iostudio\AppBundle\iostudioAppBundle(),
         );
 
