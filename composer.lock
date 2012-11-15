@@ -1,5 +1,5 @@
 {
-    "hash": "cda398b5e3cbd03553b6fa7b1aa91872",
+    "hash": "1da50387633fa1f6cfbe9912b9b3f838",
     "packages": [
         {
             "name": "beberlei/DoctrineExtensions",
@@ -648,6 +648,53 @@
             }
         },
         {
+            "name": "jdorn/sql-formatter",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/jdorn/sql-formatter.git",
+                "reference": "v1.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/jdorn/sql-formatter/archive/v1.0.1.zip",
+                "reference": "v1.0.1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "time": "2012-10-04 22:10:16",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Jeremy Dorn",
+                    "email": "jeremy@jeremydorn.com",
+                    "homepage": "http://jeremydorn.com/"
+                }
+            ],
+            "description": "a PHP SQL highlighting library",
+            "homepage": "https://github.com/jdorn/sql-formatter/",
+            "keywords": [
+                "sql",
+                "highlight"
+            ]
+        },
+        {
             "name": "jms/aop-bundle",
             "version": "1.0.0",
             "target-dir": "JMS/AopBundle",
@@ -967,78 +1014,6 @@
                 "compression",
                 "minification"
             ]
-        },
-        {
-            "name": "leafo/lessphp",
-            "version": "v0.3.6",
-            "source": {
-                "type": "git",
-                "url": "http://github.com/leafo/lessphp",
-                "reference": "v0.3.6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/leafo/lessphp/zipball/v0.3.6",
-                "reference": "v0.3.6",
-                "shasum": ""
-            },
-            "time": "2012-08-06 08:21:47",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "classmap": [
-                    "lessc.inc.php"
-                ]
-            },
-            "license": [
-                "MIT",
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Leaf Corcoran",
-                    "email": "leafot@gmail.com",
-                    "homepage": "http://leafo.net"
-                }
-            ],
-            "description": "lessphp is a compiler for LESS written in PHP.",
-            "homepage": "http://leafo.net/lessphp/"
-        },
-        {
-            "name": "leafo/scssphp",
-            "version": "v0.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/leafo/scssphp",
-                "reference": "v0.0.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/leafo/scssphp/zipball/v0.0.3",
-                "reference": "v0.0.3",
-                "shasum": ""
-            },
-            "time": "2012-08-02 09:11:09",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "classmap": [
-                    "scss.inc.php"
-                ]
-            },
-            "license": [
-                "MIT",
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Leaf Corcoran",
-                    "email": "leafot@gmail.com",
-                    "homepage": "http://leafo.net"
-                }
-            ],
-            "description": "scssphp is a compiler for SCSS written in PHP.",
-            "homepage": "http://leafo.net/scssphp/"
         },
         {
             "name": "monolog/monolog",
@@ -1701,11 +1676,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "doctrine/doctrine-bundle": 20,
         "twig/extensions": 20,
-        "symfony/assetic-bundle": 20,
-        "symfony/swiftmailer-bundle": 20,
-        "symfony/monolog-bundle": 20,
         "iostudio/framework-bundle": 20,
         "doctrine/doctrine-fixtures-bundle": 20,
         "doctrine/doctrine-migrations-bundle": 20,
