@@ -18,40 +18,18 @@ set :use_sudo,                false
 set :group_writable,          false
 set :keep_releases,           3
 ssh_options[:forward_agent] = true
-set :use_composer,            true
-set :update_vendors,          false
-set :dump_assetic_assets,     true
 
-#namespace :deploy do
-#  desc "Customize the finalize_update task to work with wordpress." 
-#  task :finalize_update, :except => { :no_release => true } do
-#    # Share common files & folders
-#    share_childs
-#  end
 #
-#  desc "Symlink static directories and static files that need to remain between deployments." 
-#  task :share_childs do
-#    if shared_children
-#      shared_children.each do |link|
-#        run "mkdir -p #{shared_path}/#{link}" 
-#        run "if [ -d #{release_path}/#{link} ] ; then rm -rf #{release_path}/#{link}; fi" 
-#        run "ln -nfs #{shared_path}/#{link} #{release_path}/#{link}" 
-#      end
-#    end
-#    if shared_files
-#      shared_files.each do |link|
-#        link_dir = File.dirname("#{shared_path}/#{link}")
-#        run "mkdir -p #{link_dir}" 
-#        run "touch #{shared_path}/#{link}" 
-#        run "ln -nfs #{shared_path}/#{link} #{release_path}/#{link}" 
-#      end
-#    end
-#  end
-#end
+# Capifony settings
 #
-#after("deploy:symlink") do
-#     deploy.cleanup
-#end
+set :use_composer,        true
+#set :composer_options,    "--no-scripts --verbose --prefer-dist"
+set :update_vendors,      false
+set :dump_assetic_assets, true
+set :copy_vendors,        true
+
+
+after "deploy", "deploy:cleanup"
 
 =begin
 This will copy a robots.txt.STAGE file and any other file you need to the shared
@@ -62,3 +40,5 @@ before("deploy:finalize_update") do
   run "if [ -f #{current_release}/web/robots.txt.#{stage} ]; then cp #{current_release}/web/robots.txt.#{stage} #{current_release}/web/robots.txt; fi"
   run "if [ -f #{current_release}/app/config/parameters.yml.#{stage} ]; then cp #{current_release}/app/config/parameters.yml.#{stage} #{current_release}/app/config/parameters.yml; fi"
 end
+
+logger.level = Logger::MAX_LEVEL
