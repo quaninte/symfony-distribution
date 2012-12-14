@@ -1,0 +1,2 @@
+# Treat the composer.lock file as a binary file
+composer.lock -crlf -diff
