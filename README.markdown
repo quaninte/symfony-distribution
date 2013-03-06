@@ -2,11 +2,9 @@ Install
 =======
 
 1) clone repo
-2) copy app/config/parameters.yml.dist to app/config/parameters.yml
-3) if you don't have composer.phar in your project root do: 
-    curl -s https://getcomposer.org/installer | php
-4) run composer.phar install
-5) profit
+2) run `./bootstrap.sh`
+3) edit `app/config/parameters.yml` in your favorite editor
+4) profit
 
 Configure
 ---------
