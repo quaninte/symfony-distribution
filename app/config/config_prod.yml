@@ -9,12 +9,20 @@ framework:
     router:
         strict_requirements: null
 
-#doctrine:
-#    orm:
-#        metadata_cache_driver: apc
-#        result_cache_driver: apc
-#        query_cache_driver: apc
+#
+# Doctrine Configuration
+# @see http://symfony.com/doc/master/reference/configuration/doctrine.html
+#
+doctrine:
+    orm:
+        metadata_cache_driver: apc
+        result_cache_driver: apc
+        query_cache_driver: apc
 
+#
+# Monolog Configuration
+# @see http://symfony.com/doc/master/reference/configuration/monolog.html
+#
 monolog:
     handlers:
         main:

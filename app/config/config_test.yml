@@ -1,6 +1,10 @@
 imports:
     - { resource: config_dev.yml }
 
+#
+# Framework configuration
+# @see http://symfony.com/doc/master/reference/configuration/framework.html
+#
 framework:
     test: ~
     session:
@@ -8,9 +12,17 @@ framework:
     profiler:
         enabled: false
 
+#
+# Profiler Configuration
+# @see http://symfony.com/doc/master/reference/configuration/web_profiler.html
+#
 web_profiler:
     toolbar: false
     intercept_redirects: false
 
+#
+# Swiftmailer Configuration
+# @see http://symfony.com/doc/master/reference/configuration/swiftmailer.html
+#
 swiftmailer:
     disable_delivery: true

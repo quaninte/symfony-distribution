@@ -11,3 +11,5 @@ parameters:
     mailer_password: null
     locale: en
     secret: 3e43fc1e52678f4ba74ec10e56450b86
+    framework_ide: ~
+    developer_email: ~

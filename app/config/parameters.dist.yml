@@ -1,0 +1,30 @@
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     localhost
+    database_port:     ~
+    database_name:     symfony
+    database_user:     root
+    database_password: ~
+
+    mailer_transport:  smtp
+    mailer_host:       localhost
+    mailer_user:       ~
+    mailer_password:   ~
+
+    locale:            en
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
+    #
+    # This will allow you to open up files in your
+    # code editor.
+    # @see http://symfony.com/doc/master/reference/configuration/framework.html#ide
+    #
+    framework_ide: ~
+    #framework_ide: "txmt://open?url=file://%%f&line=%%l"
+
+    #
+    # This will send yourself emails when using app_dev.php You
+    # just need to enter your email address
+    # @see http://symfony.com/doc/master/reference/configuration/swiftmailer.html#delivery-address
+    #
+    developer_email: ~

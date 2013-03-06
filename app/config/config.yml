@@ -2,8 +2,14 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
 
+#
+# Framework configuration
+# @see http://symfony.com/doc/master/reference/configuration/framework.html
+#
 framework:
     #esi:             ~
+    # @see http://symfony.com/doc/master/components/http_foundation/trusting_proxies.html
+    #trusted_proxies:  [192.0.0.1]
     translator:      { fallback: %locale% }
     secret:          %secret%
     router:
@@ -14,18 +20,32 @@ framework:
     validation:      { enable_annotations: true }
     templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
     default_locale:  %locale%
-    session:         ~
+    session:
+        name:            ~
+        cookie_lifetime: ~
+        cookie_path:     ~
+        cookie_domain:   ~
+        cookie_secure:   ~
+        cookie_httponly: ~
 
+#
 # Twig Configuration
+# @see http://symfony.com/doc/master/reference/configuration/twig.html
+#
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
 
+#
 # Assetic Configuration
+# @see http://symfony.com/doc/master/reference/configuration/assetic.html
+#
 assetic:
     debug:          %kernel.debug%
-    use_controller: false
-    bundles:        [ ]
+    use_controller:
+        enabled:    %kernel.debug%
+        profiler:   false
+    bundles:        ~
     #java: /usr/bin/java
     #node: /usr/bin/node
     #ruby: /usr/bin/ruby
@@ -40,25 +60,41 @@ assetic:
         yui_css:
             jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar
 
+#
 # Doctrine Configuration
+# @see http://symfony.com/doc/master/reference/configuration/doctrine.html
+#
 doctrine:
     dbal:
-        driver:   %database_driver%
-        host:     %database_host%
-        port:     %database_port%
-        dbname:   %database_name%
-        user:     %database_user%
-        password: %database_password%
-        charset:  UTF8
+        default_connection: default
+        connections:
+            default:
+                driver:    %database_driver%
+                host:      %database_host%
+                port:      %database_port%
+                dbname:    %database_name%
+                user:      %database_user%
+                password:  %database_password%
+                charset:   UTF8
+                logging:   %kernel.debug%
+                profiling: %kernel.debug%
 
     orm:
         auto_generate_proxy_classes: %kernel.debug%
-        auto_mapping: true
+        entity_managers:
+            default:
+                connection:   default
+                auto_mapping: true
 
+#
 # Swiftmailer Configuration
+# @see http://symfony.com/doc/master/reference/configuration/swiftmailer.html
+#
 swiftmailer:
+    logging:   %kernel.debug%
     transport: %mailer_transport%
     host:      %mailer_host%
     username:  %mailer_user%
     password:  %mailer_password%
     spool:     { type: memory }
+
