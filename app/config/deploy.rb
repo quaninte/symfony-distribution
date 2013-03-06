@@ -37,8 +37,8 @@ directory. This makes it so you do not need to ssh into the machince to see what
 is included in this file.
 =end
 before("deploy:finalize_update") do
-  run "if [ -f #{current_release}/web/robots.txt.#{stage} ]; then cp #{current_release}/web/robots.txt.#{stage} #{current_release}/web/robots.txt; fi"
-  run "if [ -f #{current_release}/app/config/parameters.yml.#{stage} ]; then cp #{current_release}/app/config/parameters.yml.#{stage} #{current_release}/app/config/parameters.yml; fi"
+  run "if [ -f #{current_release}/web/robots.#{stage}.txt ]; then cp #{current_release}/web/robots.#{stage}.txt #{current_release}/web/robots.txt; fi"
+  run "if [ -f #{current_release}/app/config/parameters.#{stage}.yml ]; then cp #{current_release}/app/config/parameters.#{stage}.yml #{current_release}/app/config/parameters.yml; fi"
 end
 
 logger.level = Logger::MAX_LEVEL
