@@ -2,17 +2,19 @@
 app/bootstrap*
 
 # Symfony directories
-vendor/*
-*/logs/*
-*/cache/*
+app/logs/*
+app/cache/*
 web/uploads/*
 web/bundles/*
+bin/
 
 # Configuration files
 app/config/parameters.ini
 app/config/parameters.yml
+
+# Composer stuff
 composer.phar
-web/bundles
+vendor/*
 
 #
 # Using the assetic stuff, it spits files
