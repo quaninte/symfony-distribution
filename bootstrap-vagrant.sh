@@ -9,10 +9,16 @@
 # Make sure we are in the vagrant directory
 cd /var/www/app.local
 
+# Make sure the submodules are where they need to be
+git submodule init
+git submodule update
+
 # Create a parameters.yml file if the file does not exist
 if [ ! -f app/config/parameters.yml ]; then
     cp app/config/parameters.dist.yml app/config/parameters.yml
 fi
+
+# Make sure these directories exist and apache can write to them
 mkdir -p app/{cache,logs}
 chmod -R 0777 app/{cache,logs}
 
@@ -33,6 +39,7 @@ php app/console doctrine:database:create
 #
 # Populate the database
 #
+
 # If the project uses doctrine migrations
 #php app/console doctrine:migrations:migrate
 

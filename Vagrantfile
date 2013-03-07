@@ -49,11 +49,7 @@ Vagrant::Config.run do |config|
     puppet.module_path    = "app/Resources/puppet/modules"
   end
 
-  config.vm.provision :shell do |shell|
-      shell.inline = "cd /var/www/app.local && git submodule init && git submodule update"
-  end
-
   # This will provision the server and get symfony into
   # a stable environment
-  config.vm.provision :shell, :path => "bootstrap.sh"
+  config.vm.provision :shell, :path => "bootstrap-vagrant.sh"
 end
