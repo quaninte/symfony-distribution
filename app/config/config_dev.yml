@@ -15,7 +15,7 @@ framework:
 # @see http://symfony.com/doc/master/reference/configuration/web_profiler.html
 #
 web_profiler:
-    toolbar:             true
+    toolbar:             %enable_profiler%
     intercept_redirects: false
 
 #

@@ -28,3 +28,8 @@ parameters:
     # @see http://symfony.com/doc/master/reference/configuration/swiftmailer.html#delivery-address
     #
     developer_email: ~
+
+    #
+    # Change this to false to turn off the profiler at the bottom of the page
+    #
+    enable_profiler: false
