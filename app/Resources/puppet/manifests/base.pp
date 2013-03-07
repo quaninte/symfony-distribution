@@ -7,6 +7,15 @@ exec { 'apt-get update':
     command   => "/usr/bin/apt-get update",
     logoutput => "on_failure"
 }
+exec { 'git submodule init':
+    command   => "/usr/bin/git submodule init",
+    logoutput => "on_failure"
+}
+exec { 'git submodule update':
+    command   => "/usr/bin/git submodule update",
+    logoutput => "on_failure",
+    require   => Exec['git submodule init']
+}
 
 ###
 #
@@ -41,7 +50,7 @@ file { "/var/www/app.local/web":
     require => File["/var/www/app.local"]
 }
 class { "apache":
-    require => Exec['apt-get update']
+    require => [Exec['apt-get update'], Exec['git submodule update']]
 }
 class { "apache::mod::php":
     require => Exec['apt-get update']
