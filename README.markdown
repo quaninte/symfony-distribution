@@ -2,8 +2,9 @@ Install
 =======
 
 1) clone repo
-2) run `vagrant up`
-3) Profit
+2) run `git submodule update --init`
+3) run `vagrant up`
+4) Profit
 
 Configure
 ---------
