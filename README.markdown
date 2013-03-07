@@ -2,9 +2,8 @@ Install
 =======
 
 1) clone repo
-2) run `./bootstrap.sh`
-3) edit `app/config/parameters.yml` in your favorite editor
-4) profit
+2) run `vagrant up`
+3) Profit
 
 Configure
 ---------
@@ -14,14 +13,22 @@ Edit the file app/config/parameters.yml file
 2) add your mysql username & password 
     u: root, p: root (or no password) by default
 
+Anything else that you want to configure can be done here
+as well such as turning off the profiler.
+
 Database
 --------
+
+The database is running on the VM that was created by
+vagrant. You will need to run `vagrant ssh` and then
+change directories to `/var/www/app.local` to run these
+commands on that VM.
 
 php app/console doctrine:database:create
 php app/console doctrine:schema:update --force
 
 Sass (front end)
---------
+----------------
 
 Open fresh terminal window in the background
     cd ~/project directory
@@ -31,6 +38,10 @@ If you don't have Sass & Compass at all
     sudo gem update --system
     sudo gem install compass
     sudo gem install zurb-foundation
+
+config.rb is located in the project root directory
+so you can run `compass compile` or anything else in
+this directory.
     
 Vagrant
 -------
@@ -52,10 +63,12 @@ You can find modules at http://forge.puppetlabs.com/puppetlabs
 List of files that need edits
 -----------------------------
 
+When setting up a new project, these files will need to be edited so
+that the application can be deployed or just generally setup.
+
 * app/config/deploy/beta.rb
 * app/config/deploy/production.rb
 * app/config/parameters.yml
-* bootstrap.sh
 
 Testing
 -------
@@ -70,3 +83,10 @@ on your machine in order to use this.
 
 Also note, that this is the command that is run on Jenkins so if you want
 to see if your code is working, then this is how you do it.
+
+Documentation
+-------------
+
+You can generate documentation based on docBlocks using Sami. View
+`sami.php` and check out https://github.com/fabpot/Sami
+
