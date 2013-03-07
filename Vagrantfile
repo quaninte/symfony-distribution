@@ -7,7 +7,7 @@ Vagrant::Config.run do |config|
   # please see the online documentation at vagrantup.com.
 
   # Use 512MB of memory
-  config.vm.customize ["modifyvm", :id, "--memory", "512"]
+  #config.vm.customize ["modifyvm", :id, "--memory", "512"]
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "precise32"

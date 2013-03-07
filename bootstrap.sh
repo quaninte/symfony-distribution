@@ -9,8 +9,10 @@
 # Make sure we are in the vagrant directory
 cd /var/www/app.local
 
-# Create a parameters.yml file
-cp app/config/parameters.dist.yml app/config/parameters.yml
+# Create a parameters.yml file if the file does not exist
+if [ ! -f app/config/parameters.yml ]; then
+    cp app/config/parameters.dist.yml app/config/parameters.yml
+fi
 mkdir -p app/{cache,logs}
 chmod -R 0777 app/{cache,logs}
 
@@ -22,7 +24,7 @@ rm -rf web/bundles
 curl -sS https://getcomposer.org/installer | php
 
 # Install vendors
-php composer.phar install --verbose -d="/vagrant" --no-scripts
+php composer.phar install --verbose
 
 # Create the database
 php app/console doctrine:database:create
