@@ -1,8 +1,8 @@
 Install
 =======
 
-1) clone repo
-2) run `git submodule update --init`
+1) clone repo and change directories into this directory
+2) run `./bootstrap.sh`
 3) run `vagrant up`
 4) Profit
 

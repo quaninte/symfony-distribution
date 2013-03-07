@@ -9,10 +9,6 @@
 # Make sure we are in the vagrant directory
 cd /var/www/app.local
 
-# Make sure the submodules are where they need to be
-git submodule init
-git submodule update
-
 # Create a parameters.yml file if the file does not exist
 if [ ! -f app/config/parameters.yml ]; then
     cp app/config/parameters.dist.yml app/config/parameters.yml
@@ -25,12 +21,6 @@ chmod -R 0777 app/{cache,logs}
 # The reason this happens is so there are no issues when
 # we try to install assets form bundles
 rm -rf web/bundles
-
-# Download composer
-curl -sS https://getcomposer.org/installer | php
-
-# Install vendors
-php composer.phar install --verbose
 
 # Create the database
 php app/console doctrine:database:create
