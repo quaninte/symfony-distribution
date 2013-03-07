@@ -5,7 +5,7 @@
 #
 
 # Install all submodules
-git submodule update --init
+git submodule update --init --recursive
 
 # Download composer
 curl -sS https://getcomposer.org/installer | php
