@@ -1,0 +1,12 @@
+[submodule "app/Resources/puppet/modules/apache"]
+	path = app/Resources/puppet/modules/apache
+	url = git://github.com/puppetlabs/puppetlabs-apache.git
+[submodule "app/Resources/puppet/modules/stdlib"]
+	path = app/Resources/puppet/modules/stdlib
+	url = git://github.com/puppetlabs/puppetlabs-stdlib.git
+[submodule "app/Resources/puppet/modules/mysql"]
+	path = app/Resources/puppet/modules/mysql
+	url = git://github.com/puppetlabs/puppetlabs-mysql.git
+[submodule "app/Resources/puppet/modules/firewall"]
+	path = app/Resources/puppet/modules/firewall
+	url = git://github.com/puppetlabs/puppetlabs-firewall.git

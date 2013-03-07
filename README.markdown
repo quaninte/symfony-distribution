@@ -32,6 +32,31 @@ If you don't have Sass & Compass at all
     sudo gem install compass
     sudo gem install zurb-foundation
     
+Vagrant
+-------
+
+Vagrant has been added for your convenience. Please run `vagrant up`
+on the command line to boot your server. When you are done, please run
+`vagrant destroy` or one of the other vagrant commands to shut the VM
+down.
+
+Puppet
+------
+
+All of the puppet files can be found in `app/Resources/puppet`. This includes
+the manifest files and modules. Modules should be git submodules. There is no
+need to check any of these in since they are used on multiple projects.
+
+You can find modules at http://forge.puppetlabs.com/puppetlabs
+
+List of files that need edits
+-----------------------------
+
+* app/config/deploy/beta.rb
+* app/config/deploy/production.rb
+* app/config/parameters.yml
+* bootstrap.sh
+
 Testing
 -------
 

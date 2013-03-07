@@ -10,6 +10,7 @@ framework:
     #esi:             ~
     # @see http://symfony.com/doc/master/components/http_foundation/trusting_proxies.html
     #trusted_proxies:  [192.0.0.1]
+    trusted_proxies: ~
     translator:      { fallback: %locale% }
     secret:          %secret%
     router:
