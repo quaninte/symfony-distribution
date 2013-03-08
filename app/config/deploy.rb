@@ -1,15 +1,15 @@
-# Change the application to the git repository name minus
-# the .git
+####
+# Deployment configuration
 #
-# As an example, io-symfony-standard.git would be io-symfony-standard
-set :application,             "io-symfony-standard"
+# @see https://github.com/everzet/capifony/blob/master/lib/capifony_symfony2.rb
+#
+set :application, "io-symfony-standard" # :EDIT: repository name
 
 #
-# Nothing below needs to be edited
+# Nothing below needs to be edited, see other deployment files
 # @see config/deploy/beta.rb
 # @see config/deploy/production.rb
 #
-
 set :scm,                     :git
 set :git_enable_submodules,   1
 set :deploy_via,              :remote_cache
@@ -28,12 +28,12 @@ set :update_vendors,      false
 set :dump_assetic_assets, true
 set :copy_vendors,        true
 
-
+# This makes sure that :keep_releases is enforced
 after "deploy", "deploy:cleanup"
 
 =begin
-This will copy a robots.txt.STAGE file and any other file you need to the shared
-directory. This makes it so you do not need to ssh into the machince to see what
+This will copy a robots.STAGE.txt file and any other file you need to the shared
+directory. This makes it so you do not need to ssh into the machine to see what
 is included in this file.
 =end
 before("deploy:finalize_update") do

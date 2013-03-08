@@ -1,3 +1,10 @@
+####
+#
+# Jenkins Configuration
+#
+# This file is used by jenkins. This file will be copied before
+# phpunit tests run, etc.
+#
 parameters:
     database_driver:   pdo_mysql
     database_host:     localhost
@@ -13,5 +20,7 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
-    framework_ide: ~
+
+    framework_ide:   ~
     developer_email: ~
+    enable_profiler: false

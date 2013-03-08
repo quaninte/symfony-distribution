@@ -1,6 +1,15 @@
 {
     "name": "iostudio/framework-standard-edition",
     "description": "The \"iostudio Standard Edition\" distribution",
+    "type": "symfony2-distribution",
+    "homepage": "http://git.iostudiohq.com/io-symfony-standard",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "iostudio Developers",
+            "homepage": "http://iostudio.com"
+        }
+    ],
     "minimum-stability": "dev",
     "autoload": {
         "psr-0": { "": "src/" }

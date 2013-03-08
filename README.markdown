@@ -69,7 +69,15 @@ that the application can be deployed or just generally setup.
 
 * app/config/deploy/beta.rb
 * app/config/deploy/production.rb
+* app/config/deploy.rb
+* app/config/parameters.beta.yml
+* app/config/parameters.production.yml
 * app/config/parameters.yml
+* composer.json
+* sami.php
+
+Run `git grep ":EDIT:"` to get a list of what needs to be edited. This
+will however exclude composer.json, so DO NOT FORGET to update that file.
 
 Testing
 -------

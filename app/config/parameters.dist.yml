@@ -1,3 +1,10 @@
+####
+#
+# Default Configuration
+#
+# This file should be copied and saved as `parameters.yml` in the same
+# directory.
+#
 parameters:
     database_driver:   pdo_mysql
     database_host:     localhost
@@ -17,6 +24,7 @@ parameters:
     #
     # This will allow you to open up files in your
     # code editor.
+    # 
     # @see http://symfony.com/doc/master/reference/configuration/framework.html#ide
     #
     framework_ide: ~
@@ -32,4 +40,4 @@ parameters:
     #
     # Change this to false to turn off the profiler at the bottom of the page
     #
-    enable_profiler: false
+    enable_profiler: true

@@ -1,3 +1,7 @@
+####
+#
+# Production configuration
+#
 imports:
     - { resource: config.yml }
 
@@ -22,6 +26,7 @@ doctrine:
 #
 # Monolog Configuration
 # @see http://symfony.com/doc/master/reference/configuration/monolog.html
+# @TODO setup this to email developers on error
 #
 monolog:
     handlers:

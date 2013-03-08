@@ -1,12 +1,16 @@
 #!/usr/bin/env bash
 ####
 #
-# bootstrap.sh - This file is used to bootstrap your project.
-# Once you clone this project, you should run this script and
-# it will set up your database and anything else in the project
+# bootstrap-vagrant.sh
+#
+# This file is used by vagrant make sure symfony gets setup
+# the proper way on the VM.
+#
+# @TODO Move this stuff to the manifest file
 #
 
-# Make sure we are in the vagrant directory
+# Make sure we are in the vagrant directory, this is a directory
+# on the VM
 cd /var/www/app.local
 
 # Make sure these directories exist and apache can write to them
