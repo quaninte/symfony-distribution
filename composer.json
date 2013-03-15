@@ -1,9 +1,9 @@
 {
-    "name": "iostudio/framework-standard-edition",
+    "name": "iostudio/symfony-distribution",
     "description": "The \"iostudio Standard Edition\" distribution",
     "type": "symfony2-distribution",
-    "homepage": "http://git.iostudiohq.com/io-symfony-standard",
-    "license": "proprietary",
+    "homepage": "https://github.com/iostudio/symfony-distribution",
+    "license": "MIT",
     "authors": [
         {
             "name": "iostudio Developers",
@@ -15,10 +15,6 @@
         "psr-0": { "": "src/" }
     },
     "repositories": [
-        {
-            "type": "composer",
-            "url": "http://satis.iostudiohq.com"
-        }
     ],
     "require": {
         "php": ">=5.3.3",
@@ -34,12 +30,10 @@
         "sensio/generator-bundle": "2.2.*",
         "jms/security-extra-bundle": "1.4.*",
         "jms/di-extra-bundle": "1.3.*",
-        "iostudio/framework-bundle": "<=2.0.x-dev",
         "doctrine/doctrine-fixtures-bundle": "*",
         "doctrine/doctrine-migrations-bundle": "*"
     },
     "require-dev": {
-        "iostudio/standard-build": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
