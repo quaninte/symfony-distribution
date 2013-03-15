@@ -1,14 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-The basedir is where the base symfony2 project is.
+    Generate a build, this will test and run various programs
+    against the code base to make sure that the code you write
+    is acceptable
 -->
-<project name="symfony2" default="build" basedir=".">
-    <description>Symfony 2 Build File</description>
+<project name="iostudio-symfony-distribution" default="build" basedir=".">
+    <description>iostudio Symfony Distribution Build File</description>
+
+    <!--<target name="build"
+        depends="prepare,lint,phploc,pdepend,phpmd,phpcs,phpcpd" />-->
+    <target name="build"
+        depends="prepare" />
+
+    <target name="prepare" depends="clean">
+        <mkdir dir="${basedir}/build/api" />
+        <mkdir dir="${basedir}/build/code-browser" />
+        <mkdir dir="${basedir}/build/coverage" />
+        <mkdir dir="${basedir}/build/logs" />
+        <mkdir dir="${basedir}/build/pdepend" />
+        <mkdir dir="${basedir}/app/cache" />
+        <mkdir dir="${basedir}/app/logs" />
+        <mkdir dir="${basedir}/web/uploads" />
+
+        <copy file="${basedir}/app/config/parameters.jenkins.yml" tofile="${basedir}/app/config/parameters.yml" />
+
+        <exec executable="bash">
+            <arg value="-c" />
+            <arg value="curl -sS https://getcomposer.org/installer | php" />
+        </exec>
+
+        <exec executable="php">
+            <arg value="composer.phar" />
+            <arg value="update" />
+            <arg value="--prefer-dist" />
+            <arg value="--dev" />
+            <arg value="--verbose" />
+        </exec>
+
+        <exec executable="app/console" failonerror="true">
+            <arg value="doctrine:database:drop" />
+            <arg value="--no-interaction" />
+            <arg value="--force" />
+            <arg value="--env=test" />
+        </exec>
+    </target>
+
+    <target name="clean">
+        <delete dir="${basedir}/build/api" />
+        <delete dir="${basedir}/build/code-browser" />
+        <delete dir="${basedir}/build/coverage" />
+        <delete dir="${basedir}/build/logs" />
+        <delete dir="${basedir}/build/pdepend" />
+    </target>
 
     <!--
-    This is the path to the base.xml file that will build the entire project
+         Run lint checking on php and twig files
+         @todo Split this up
     -->
-    <import file="${basedir}/vendor/iostudio/standard-build/src/base.xml" />
-  
+    <target name="lint">
+        <apply executable="php" failonerror="true">
+            <arg value="-l" />
+
+            <fileset dir="${basedir}/app">
+                <include name="**/*.php" />
+                <exclude name="**/cache/**" />
+            </fileset>
+
+            <fileset dir="${basedir}/src">
+                <include name="**/*.php" />
+                <exclude name="**/DataFixtures/**" />
+                <exclude name="**/Tests/**" />
+            </fileset>
+
+            <fileset dir="${basedir}/web">
+                <include name="**/*.php" />
+            </fileset>
+        </apply>
+
+        <apply executable="app/console" failonerror="true">
+            <arg value="twig:lint" />
+
+            <fileset dir="${basedir}/app/Resources">
+                <include name="**/*.twig" />
+            </fileset>
+
+            <fileset dir="${basedir}/src">
+                <include name="**/*.twig" />
+            </fileset>
+        </apply>
+    </target>
+
+    <!--
+        phploc - http://sebastianbergmann.github.com/phploc/
+    -->
+    <target name="phploc">
+    </target>
 </project>
 
