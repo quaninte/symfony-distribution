@@ -40,10 +40,16 @@
         "squizlabs/php_codesniffer": "*"
     },
     "scripts": {
+        "pre-install-cmd": [
+            "if [ ! -f app/config/parameters.yml ]; then cp app/config/parameters.dist.yml app/config/parameters.yml; fi"
+        ],
         "post-install-cmd": [
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
+        ],
+        "pre-update-cmd": [
+            "if [ ! -f app/config/parameters.yml ]; then cp app/config/parameters.dist.yml app/config/parameters.yml; fi"
         ],
         "post-update-cmd": [
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
