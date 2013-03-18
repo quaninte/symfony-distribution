@@ -3,6 +3,9 @@
     Generate a build, this will test and run various programs
     against the code base to make sure that the code you write
     is acceptable
+
+    @todo Make this a phing script
+    @todo Require this stuff in require_dev
 -->
 <project name="iostudio-symfony-distribution" default="build" basedir=".">
     <description>iostudio Symfony Distribution Build File</description>
@@ -12,6 +15,10 @@
     <target name="build"
         depends="prepare" />
 
+    <!--
+        Make sure all the directories exist and get symfony setup
+        for testing
+    -->
     <target name="prepare" depends="clean">
         <mkdir dir="${basedir}/build/api" />
         <mkdir dir="${basedir}/build/code-browser" />
@@ -22,40 +29,90 @@
         <mkdir dir="${basedir}/app/logs" />
         <mkdir dir="${basedir}/web/uploads" />
 
+        <!--
+             Use the jenkins parameters file
+        -->
         <copy file="${basedir}/app/config/parameters.jenkins.yml" tofile="${basedir}/app/config/parameters.yml" />
 
+        <!--
+            Download composer (clean task deletes this file)
+        -->
         <exec executable="bash">
             <arg value="-c" />
             <arg value="curl -sS https://getcomposer.org/installer | php" />
         </exec>
 
+        <!--
+            Install dependencies, verbose option can be remove, but I like
+            to know what it's doing, if it's too much text for you, you can
+            comment or delete that line
+        -->
         <exec executable="php">
             <arg value="composer.phar" />
-            <arg value="update" />
-            <arg value="--prefer-dist" />
+            <arg value="install" />
             <arg value="--dev" />
             <arg value="--verbose" />
         </exec>
 
+        <!--
+            Drops the database so we can start fresh
+        -->
         <exec executable="app/console" failonerror="true">
             <arg value="doctrine:database:drop" />
             <arg value="--no-interaction" />
             <arg value="--force" />
             <arg value="--env=test" />
         </exec>
+
+        <exec executable="app/console" failonerror="true">
+            <arg value="doctrine:database:create" />
+            <arg value="--no-interaction" />
+            <arg value="--env=test" />
+        </exec>
+
+        <!--
+            Ignores migrations, might need to update this
+        -->
+        <exec executable="app/console" failonerror="true">
+            <arg value="doctrine:schema:update" />
+            <arg value="--no-interaction" />
+            <arg value="--force" />
+            <arg value="--env=test" />
+        </exec>
+
+        <exec executable="app/console" failonerror="true">
+            <arg value="assetic:dump" />
+            <arg value="--no-interaction" />
+            <arg value="--no-debug" />
+            <arg value="--env=prod" />
+        </exec>
+
+        <exec executable="app/console" failonerror="true">
+            <arg value="assets:install" />
+            <arg value="--no-interaction" />
+            <arg value="--no-debug" />
+            <arg value="--env=prod" />
+            <arg value="web" />
+        </exec>
+
     </target>
 
+    <!--
+        Delete all the file that a previous build created
+    -->
     <target name="clean">
         <delete dir="${basedir}/build/api" />
         <delete dir="${basedir}/build/code-browser" />
         <delete dir="${basedir}/build/coverage" />
         <delete dir="${basedir}/build/logs" />
         <delete dir="${basedir}/build/pdepend" />
+        <delete file="${basedir}/composer.phar" />
+        <delete dir="${basedir}/app/cache" />
     </target>
 
     <!--
-         Run lint checking on php and twig files
-         @todo Split this up
+        Run lint checking on php and twig files
+        @todo Split this up into lint-twig and lint-php
     -->
     <target name="lint">
         <apply executable="php" failonerror="true">
@@ -92,8 +149,97 @@
 
     <!--
         phploc - http://sebastianbergmann.github.com/phploc/
+
+        Only care about what is in the src/ directory
     -->
     <target name="phploc">
+        <exec executable="phploc">
+            <arg value="--log-csv" />
+            <arg value="${basedir}/build/logs/phploc.csv" />
+            <arg value="--exclude" />
+            <arg value="${basedir}/app" />
+            <arg value="--exclude" />
+            <arg value="${basedir}/web" />
+            <arg path="${basedir}" />
+        </exec>
     </target>
+
+    <!--
+        pdepend - http://pdepend.org/
+    -->
+    <target name="pdepend">
+        <exec executable="pdepend">
+            <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
+            <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
+            <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
+            <arg value="--ignore=${basedir}/app,${basedir}/vendor" />
+            <arg path="${basedir}" />
+        </exec>
+    </target>
+
+    <!--
+        phpmd - http://phpmd.org/
+    -->
+    <target name="phpmd">
+        <exec executable="phpmd">
+            <arg path="${basedir}/app/Resources,${basedir}/src" />
+            <arg value="xml" />
+            <arg value="${basedir}/build/ruleset/phpmd.xml" />
+            <arg value="--reportfile" />
+            <arg value="${basedir}/build/logs/pmd.xml" />
+        </exec>
+    </target>
+
+    <!--
+        phpcs - http://pear.php.net/package/PHP_CodeSniffer
+
+        @todo Setup PSR standards
+    -->
+    <target name="phpcs">
+        <exec executable="phpcs" output="/dev/null">
+            <arg value="--report=checkstyle" />
+            <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
+            <arg value="--standard=${basedir}/build/ruleset/phpcs.xml" />
+            <arg value="--ignore=${basedir}/vendor/*,${basedir}/app/*,${basedir}/web/*,*.js,*.css" />
+            <arg path="${basedir}" />
+        </exec>
+    </target>
+
+    <!--
+        phpcpd - https://github.com/sebastianbergmann/phpcpd
+    -->
+    <target name="phpcpd">
+        <exec executable="phpcpd">
+            <arg value="--log-pmd" />
+            <arg value="${basedir}/build/logs/pmd-cpd.xml" />
+            <arg value="--exclude" />
+            <arg value="${basedir}/app" />
+            <arg value="--exclude" />
+            <arg value="${basedir}/vendor" />
+            <arg path="${basedir}" />
+        </exec>
+    </target>
+
+    <!--
+         sami - https://github.com/fabpot/Sami
+    -->
+    <target name="sami">
+        <exec executable="sami">
+            <arg value="update" />
+            <arg value="sami.php" />
+            <arg value="--verbose" />
+        </exec>
+    </target>
+
+    <!--
+        phpunit - https://github.com/sebastianbergmann/phpunit/
+    -->
+    <target name="phpunit">
+        <exec executable="phpunit" failonerror="true">
+            <arg value="-c" />
+            <arg value="app/" />
+        </exec>
+    </target>
+
 </project>
 

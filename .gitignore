@@ -30,6 +30,7 @@ web/.sass-cache
 # code and such
 #
 build/
+!build/ruleset
 
 #
 # Misc. ignores
