@@ -192,6 +192,7 @@
 
     <!--
         phpcs - http://pear.php.net/package/PHP_CodeSniffer
+                https://github.com/squizlabs/PHP_CodeSniffer
 
         @todo Setup PSR standards
     -->
