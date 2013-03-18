@@ -10,10 +10,8 @@
 <project name="iostudio-symfony-distribution" default="build" basedir=".">
     <description>iostudio Symfony Distribution Build File</description>
 
-    <!--<target name="build"
-        depends="prepare,lint,phploc,pdepend,phpmd,phpcs,phpcpd" />-->
     <target name="build"
-        depends="prepare" />
+        depends="prepare,lint,phploc,pdepend,phpmd,phpcs,phpcpd" />
 
     <!--
         Make sure all the directories exist and get symfony setup
@@ -112,9 +110,13 @@
 
     <!--
         Run lint checking on php and twig files
-        @todo Split this up into lint-twig and lint-php
     -->
-    <target name="lint">
+    <target name="lint" depends="lint-php,lint-twig" />
+
+    <!--
+        check syntax of php files
+    -->
+    <target name="lint-php">
         <apply executable="php" failonerror="true">
             <arg value="-l" />
 
@@ -133,7 +135,12 @@
                 <include name="**/*.php" />
             </fileset>
         </apply>
+    </target>
 
+    <!--
+        check syntax of twig files
+    -->
+    <target name="lint-twig">
         <apply executable="app/console" failonerror="true">
             <arg value="twig:lint" />
 
@@ -147,13 +154,14 @@
         </apply>
     </target>
 
+
     <!--
         phploc - http://sebastianbergmann.github.com/phploc/
 
         Only care about what is in the src/ directory
     -->
     <target name="phploc">
-        <exec executable="phploc">
+        <exec executable="vendor/bin/phploc">
             <arg value="--log-csv" />
             <arg value="${basedir}/build/logs/phploc.csv" />
             <arg value="--exclude" />
@@ -168,7 +176,7 @@
         pdepend - http://pdepend.org/
     -->
     <target name="pdepend">
-        <exec executable="pdepend">
+        <exec executable="vendor/bin/pdepend">
             <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
             <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
             <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
@@ -181,7 +189,7 @@
         phpmd - http://phpmd.org/
     -->
     <target name="phpmd">
-        <exec executable="phpmd">
+        <exec executable="vendor/bin/phpmd">
             <arg path="${basedir}/app/Resources,${basedir}/src" />
             <arg value="xml" />
             <arg value="${basedir}/build/ruleset/phpmd.xml" />
@@ -197,7 +205,7 @@
         @todo Setup PSR standards
     -->
     <target name="phpcs">
-        <exec executable="phpcs" output="/dev/null">
+        <exec executable="vendor/bin/phpcs" output="/dev/null">
             <arg value="--report=checkstyle" />
             <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
             <arg value="--standard=${basedir}/build/ruleset/phpcs.xml" />
@@ -236,7 +244,7 @@
         phpunit - https://github.com/sebastianbergmann/phpunit/
     -->
     <target name="phpunit">
-        <exec executable="phpunit" failonerror="true">
+        <exec executable="vendor/bin/phpunit" failonerror="true">
             <arg value="-c" />
             <arg value="app/" />
         </exec>
