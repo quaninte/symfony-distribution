@@ -61,7 +61,6 @@
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
         "branch-alias": {
-            "dev-master": "2.0.x-dev"
         }
     }
 }
