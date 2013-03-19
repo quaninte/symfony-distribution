@@ -1,10 +1,11 @@
 Install
 =======
 
-1) clone repo and change directories into this directory
-2) run `./bootstrap.sh`
-3) run `vagrant up`
-4) Profit
+1. clone repo and change directories into this directory
+1.1. You may run `create-project` command in composer
+2. run `./bootstrap.sh`
+3. run `vagrant up`
+4. Profit
 
 Configure
 ---------
