@@ -1,5 +1,6 @@
 {
     "name": "iostudio/symfony-distribution",
+    "version": "2.0.0",
     "description": "The \"iostudio Standard Edition\" distribution",
     "type": "symfony2-distribution",
     "homepage": "https://github.com/iostudio/symfony-distribution",
