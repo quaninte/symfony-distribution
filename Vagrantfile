@@ -10,11 +10,11 @@ Vagrant::Config.run do |config|
   #config.vm.customize ["modifyvm", :id, "--memory", "512"]
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "precise32"
+  config.vm.box = "precise64"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
   # Boot with a GUI so you can see the screen. (Default is headless)
   # config.vm.boot_mode = :gui
@@ -37,13 +37,14 @@ Vagrant::Config.run do |config|
   # Share an additional folder to the guest VM. The first argument is
   # an identifier, the second is the path on the guest to mount the
   # folder, and the third is the path on the host to the actual folder.
-  config.vm.share_folder "app", "/var/www/app.local", ".", :nfs => false, :owner => "www-data", :group => "www-data"
+  config.vm.share_folder "app", "/var/www/app.local", ".", :nfs => true
 
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.
   # You will need to create the manifests directory and a manifest in
   # the file base.pp in the manifests_path directory.
   config.vm.provision :puppet do |puppet|
+    puppet.options        = "--verbose --debug"
     puppet.manifests_path = "app/Resources/puppet/manifests"
     puppet.manifest_file  = "base.pp"
     puppet.module_path    = "app/Resources/puppet/modules"

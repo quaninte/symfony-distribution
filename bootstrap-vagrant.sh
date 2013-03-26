@@ -13,16 +13,9 @@
 # on the VM
 cd /var/www/app.local
 
-# Make sure these directories exist and apache can write to them
-mkdir -p app/{cache,logs}
-chmod -R 0777 app/{cache,logs}
-
 # The reason this happens is so there are no issues when
 # we try to install assets form bundles
 rm -rf web/bundles
-
-# Create the database
-php app/console doctrine:database:create
 
 ####
 #

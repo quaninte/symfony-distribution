@@ -3,9 +3,10 @@
 # This is used to update the packages on the VM, this
 # should run before installing things like apache or mysql
 #
-exec { 'apt-get update':
-    command   => "/usr/bin/apt-get update",
-    logoutput => "on_failure"
+exec { "apt-get update && apt-get upgrade":
+    path      => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/vagrant_ruby/bin",
+    command   => "apt-get update && apt-get upgrade -y --fix-missing",
+    logoutput => true,
 }
 
 ###
@@ -14,41 +15,52 @@ exec { 'apt-get update':
 #
 package { 'git':
     ensure  => present,
-    require => Exec['apt-get update']
 }
 package { 'vim':
     ensure  => present,
-    require => Exec['apt-get update']
 }
 package { 'curl':
     ensure  => present,
-    require => Exec['apt-get update']
+}
+
+####
+#
+# Global install of composer
+#
+exec { "composer":
+    path      => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/vagrant_ruby/bin",
+    creates   => "/usr/local/bin",
+    cwd       => "/usr/local/bin",
+    logoutput => true,
+    command   => "curl -sS https://getcomposer.org/installer | php",
 }
 
 ###
 #
 # Setup apache, this may need to be updated for some projects
 #
-file { "/var/www/app.local":
-    ensure    => directory,
-    owner     => www-data,
-    group     => www-data,
-}
 file { "/var/www/app.local/web":
     ensure  => directory,
-    owner   => www-data,
-    group   => www-data,
-    require => File["/var/www/app.local"]
+    #owner   => www-data,
+    #group   => www-data,
+    recursive => true,
 }
-class { "apache":
-    require => Exec['apt-get update']
+
+# make sure these directories exist and can be used by www-data
+file { "/var/www/app.local/app/cache":
+    mode => '0777',
 }
-class { "apache::mod::php":
-    require => Exec['apt-get update']
+file { "/var/www/app.local/app/logs":
+    mode => '0777',
 }
+
+class { "apache": }
+class { "apache::mod::php": }
 apache::vhost { 'app.local':
     priority   => 000,
     port       => 80,
+    servername => 'app.local',
+    serveraliases => '*',
     # Vagrant puts all the files in the /vagrant directory,
     # so we want to make sure that the web directory is used
     # as docroot so it picks up app_dev.php and app.php
@@ -62,15 +74,22 @@ apache::vhost { 'app.local':
 #
 # Setup mysql
 #
-class { "mysql":
-    require => Exec['apt-get update']
-}
+class { "mysql": }
 class { "mysql::server":
-    require     => Exec['apt-get update'],
     config_hash => {
         "root_password" => "root"
     }
 }
-class { "mysql::php":
-    require => Exec['apt-get update']
+class { "mysql::php": }
+
+####
+#
+# This will setup a database named "app", you can update
+# the user and password to something else
+#
+mysql::db { 'app':
+    user     => "root",
+    password => "root",
+    host     => $::hostname,
+    grant    => ['all']
 }
